@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <header>
-      <h1><router-link to="/">main</router-link></h1>
-    </header>
-    <transition name="page" mode="out-in">
-      <router-view></router-view>
-    </transition>
+      <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+    name: 'app',
+    created() {
+        document.title = "액션제주";
+    },
 }
 </script>
 
